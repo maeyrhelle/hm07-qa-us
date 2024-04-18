@@ -15,17 +15,6 @@ const requestBody = {
     ]
 }
 
-// test('status should be 200', async () => {
-//	let actualStatus;
-//	try {
-//		const response = await fetch(`${config.API_URL}/api/v1/warehouses/check`);
-//		actualStatus = response.status;
-//		console.log(response)
-//	} catch (error) {
-//		console.error(error);
-//	}
-//	expect(actualStatus).toBe(200);
-//}); 
 
 test('check availability of goods in warehouse', async () => {
     let actualStatus;
