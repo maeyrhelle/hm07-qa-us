@@ -15,12 +15,11 @@ tests were run through the terminal in VS Code
 
 
 How to run the tests:
-1) To run the test:
-2) Clone repo to your local machine in your console
-3) Import the project into VS Code or other environment
-4) In config.js, replace the API URL with the unique link generated after the launch of Urban Grocers server
-5) Use serverURL/docs/ to check the endpoints
-6) Type 'npx jest' in terminal to run the tests
+1) Clone repo to your local machine in your console
+2) Import the project into VS Code or other environment
+3) In config.js, replace the API URL with the unique link generated after the launch of Urban Grocers server
+4) Use serverURL/docs/ to check the endpoints
+5) Type 'npx jest' in terminal to run the tests
 
 
 Notes:
