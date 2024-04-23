@@ -13,6 +13,7 @@ const requestBody = {
 test('status should be 200', async () => {
     let actualStatus;
 	try {
+		// Create a shopping cart
 		const responseCart = await fetch(`${config.API_URL}/api/v1/orders`, {
 			method: "POST",
 			headers: {
@@ -22,6 +23,7 @@ test('status should be 200', async () => {
 		  });
 		  const cart = await responseCart.json();
 		  let cartID = cart["id"];
+		// Put items in the created shopping cart
 		const response = await fetch(`${config.API_URL}/api/v1/orders/${cartID}`, {
 			method: 'PUT',
 			headers: {
@@ -40,6 +42,7 @@ test('status should be 200', async () => {
 test('should be Fresh Food', async () => {
     let actualResponseBody;
     try {
+		// Create a shopping cart
 		const responseCart = await fetch(`${config.API_URL}/api/v1/orders`, {
 			method: "POST",
 			headers: {
@@ -49,6 +52,7 @@ test('should be Fresh Food', async () => {
 		  });
 		  const cart = await responseCart.json();
 		  let cartID = cart["id"];
+		// Put items in the created shopping cart
 		const response = await fetch(`${config.API_URL}/api/v1/orders/${cartID}`, {
 			method: 'PUT',
 			headers: {

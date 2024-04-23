@@ -20,6 +20,7 @@ const requestBody = {
 test('should be 200 OK in status', async () => {
     let actualStatus;
 	try {
+		// Create a shopping cart
 		const responseCart = await fetch(`${config.API_URL}/api/v1/orders`, {
 			method: "POST",
 			headers: {
@@ -29,6 +30,7 @@ test('should be 200 OK in status', async () => {
 		  });
 		  const cart = await responseCart.json();
 		  let cartID = cart["id"];
+		// Delete the shopping cart
 		const response = await fetch(`${config.API_URL}/api/v1/orders/${cartID}`, {
 			method: 'DELETE',
 			headers: {
@@ -45,6 +47,7 @@ test('should be 200 OK in status', async () => {
  test('Should be a {"ok":true} JSON response to deleting the cart', async () => {
     let actualResponseBody;
     try {
+		// Create a shopping cart
 		const responseCart = await fetch(`${config.API_URL}/api/v1/orders`, {
 			method: "POST",
 			headers: {
@@ -54,6 +57,7 @@ test('should be 200 OK in status', async () => {
 		  });
 		  const cart = await responseCart.json();
 		  let cartID = cart["id"];
+		// Delete the shopping cart
 		const response = await fetch(`${config.API_URL}/api/v1/orders/${cartID}`, {
 			method: 'DELETE',
 			headers: {
