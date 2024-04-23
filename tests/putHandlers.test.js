@@ -4,7 +4,7 @@ const config = require('../config');
 const requestBody = {
 	"productsList": [
         {
-            "id": 5,
+            "id": 6,
             "quantity": 1
         }
     ]
@@ -13,7 +13,16 @@ const requestBody = {
 test('status should be 200', async () => {
     let actualStatus;
 	try {
-		const response = await fetch(`${config.API_URL}/api/v1/orders/2`, {
+		const responseCart = await fetch(`${config.API_URL}/api/v1/orders`, {
+			method: "POST",
+			headers: {
+			  "Content-Type": "application/json",
+			},
+			body: JSON.stringify(requestBody),
+		  });
+		  const cart = await responseCart.json();
+		  let cartID = cart["id"];
+		const response = await fetch(`${config.API_URL}/api/v1/orders/${cartID}`, {
 			method: 'PUT',
 			headers: {
 			'Content-Type': 'application/json'
@@ -28,10 +37,19 @@ test('status should be 200', async () => {
 });
 
 
-test('adding items to the cart', async () => {
+test('should be Fresh Food', async () => {
     let actualResponseBody;
     try {
-		const response = await fetch(`${config.API_URL}/api/v1/orders/2`, {
+		const responseCart = await fetch(`${config.API_URL}/api/v1/orders`, {
+			method: "POST",
+			headers: {
+			  "Content-Type": "application/json",
+			},
+			body: JSON.stringify(requestBody),
+		  });
+		  const cart = await responseCart.json();
+		  let cartID = cart["id"];
+		const response = await fetch(`${config.API_URL}/api/v1/orders/${cartID}`, {
 			method: 'PUT',
 			headers: {
 			'Content-Type': 'application/json'

@@ -16,7 +16,7 @@ const requestBody = {
 }
 
 
-test('check availability of goods in warehouse', async () => {
+test('should be 200 OK in status', async () => {
     let actualStatus;
     try {
 		const response = await fetch(`${config.API_URL}/api/v1/warehouses/check`, {
@@ -34,7 +34,7 @@ test('check availability of goods in warehouse', async () => {
 });
 
 
-test('check availability of goods in warehouse', async () => {
+test('should show availability of goods in warehouse', async () => {
     let actualResponseBody;
     try {
 		const response = await fetch(`${config.API_URL}/api/v1/warehouses/check`, {
