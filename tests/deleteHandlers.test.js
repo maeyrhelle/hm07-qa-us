@@ -24,12 +24,12 @@ test('should be 200 OK in status', async () => {
 		const responseCart = await fetch(`${config.API_URL}/api/v1/orders`, {
 			method: "POST",
 			headers: {
-			  "Content-Type": "application/json",
+			"Content-Type": "application/json",
 			},
 			body: JSON.stringify(requestBody),
-		  });
-		  const cart = await responseCart.json();
-		  let cartID = cart["id"];
+		});
+		const cart = await responseCart.json();
+		let cartID = cart["id"];
 		// Delete the shopping cart
 		const response = await fetch(`${config.API_URL}/api/v1/orders/${cartID}`, {
 			method: 'DELETE',
@@ -51,12 +51,12 @@ test('should be 200 OK in status', async () => {
 		const responseCart = await fetch(`${config.API_URL}/api/v1/orders`, {
 			method: "POST",
 			headers: {
-			  "Content-Type": "application/json",
+			"Content-Type": "application/json",
 			},
 			body: JSON.stringify(requestBody),
-		  });
-		  const cart = await responseCart.json();
-		  let cartID = cart["id"];
+		});
+		const cart = await responseCart.json();
+		let cartID = cart["id"];
 		// Delete the shopping cart
 		const response = await fetch(`${config.API_URL}/api/v1/orders/${cartID}`, {
 			method: 'DELETE',
