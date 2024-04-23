@@ -14,7 +14,7 @@ NPM Jest;
 tests were run through the terminal in VS Code
 
 
-How to run the tests
+How to run the tests:
 1) To run the test:
 2) Clone repo to your local machine in your console
 3) Import the project into VS Code or other environment
