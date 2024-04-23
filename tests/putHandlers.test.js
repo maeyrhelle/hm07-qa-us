@@ -21,8 +21,8 @@ test('status should be 200', async () => {
 			},
 			body: JSON.stringify(requestBody),
 		});
-		  const cart = await responseCart.json();
-		  let cartID = cart["id"];
+		const cart = await responseCart.json();
+		let cartID = cart["id"];
 		// Put items in the created shopping cart
 		const response = await fetch(`${config.API_URL}/api/v1/orders/${cartID}`, {
 			method: 'PUT',
@@ -46,12 +46,12 @@ test('should be Fresh Food', async () => {
 		const responseCart = await fetch(`${config.API_URL}/api/v1/orders`, {
 			method: "POST",
 			headers: {
-			  "Content-Type": "application/json",
+			"Content-Type": "application/json",
 			},
 			body: JSON.stringify(requestBody),
-		  });
-		  const cart = await responseCart.json();
-		  let cartID = cart["id"];
+		});
+		const cart = await responseCart.json();
+		let cartID = cart["id"];
 		// Put items in the created shopping cart
 		const response = await fetch(`${config.API_URL}/api/v1/orders/${cartID}`, {
 			method: 'PUT',
